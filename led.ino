@@ -15,9 +15,9 @@
 #define LED_COUNT 94
 #define LED_PIN 13
 
-#define ENCODER_S1_PIN 4
-#define ENCODER_S2_PIN 3
-#define ENCODER_KEY_PIN 2
+#define ENCODER_S1_PIN 6
+#define ENCODER_S2_PIN 7
+#define ENCODER_KEY_PIN 8
 
 #define INITIAL_BRIGHTNESS 32
 #define INITIAL_COLOR "warm"
