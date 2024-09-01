@@ -3,7 +3,7 @@
 #include <LiquidCrystal_I2C.h>
 #include <stdint.h>
 
-#include "lcd-view.h"
+#include "../lcd/lcd-view.h"
 
 class BrightnessView: public LcdView {
 public:

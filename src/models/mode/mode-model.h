@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdint.h>
-#include "abstract-model.h"
+#include "../abstract/abstract-model.h"
 
 #define MODES_COUNT 3
 

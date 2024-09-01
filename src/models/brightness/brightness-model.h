@@ -1,8 +1,8 @@
 #pragma once
 
 #include <stdint.h>
-#include "abstract-model.h"
-#include "vector.h"
+#include "../abstract/abstract-model.h"
+#include "../../utils/vector.h"
 
 #define MIN_BRIGHTNESS 32
 #define MAX_BRIGHTNESS 255

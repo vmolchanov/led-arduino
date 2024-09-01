@@ -2,22 +2,23 @@
 #include <stdint.h>
 #include <GyverEncoder.h>
 
-#include "led-controller.h"
-#include "brightness-view.h"
-#include "color-view.h"
-#include "mode-view.h"
-#include "abstract-model.h"
-#include "brightness-model.h"
-#include "color-model.h"
-#include "mode-model.h"
-#include "vector.h"
+#include "src/views/brightness/brightness-view.h"
+#include "src/views/color/color-view.h"
+#include "src/views/mode/mode-view.h"
+#include "src/models/abstract/abstract-model.h"
+#include "src/models/brightness/brightness-model.h"
+#include "src/models/color/color-model.h"
+#include "src/models/mode/mode-model.h"
+#include "src/utils/vector.h"
+
+#include "src/controllers/led/led-controller.h"
 
 #define LED_COUNT 94
 #define LED_PIN 13
 
-#define ENCODER_S1_PIN 6
-#define ENCODER_S2_PIN 7
-#define ENCODER_KEY_PIN 8
+#define ENCODER_S1_PIN 4
+#define ENCODER_S2_PIN 3
+#define ENCODER_KEY_PIN 2
 
 #define INITIAL_BRIGHTNESS 32
 #define INITIAL_COLOR "warm"
@@ -104,6 +105,8 @@ void onModeModelRight() {
 
 void onModeModelChange() {
   modeView->showMode(modeModel->getMode());
+
+  ledController->setMode(modeModel->getMode());
 }
 
 void setup() {
@@ -153,4 +156,6 @@ void loop() {
   if (encoder->isHolded()) {
     toggleBacklight();
   }
+
+  ledController->tick(millis());
 }

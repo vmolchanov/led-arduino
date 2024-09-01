@@ -1,4 +1,4 @@
-#include "color-view.h"
+#include "../color/color-view.h"
 
 ColorView::ColorView(const LiquidCrystal_I2C *lcd) : LcdView(lcd) {
 }
